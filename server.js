@@ -30,7 +30,7 @@ app.post('/api/notes', (req, res) => {
     const newNote = createNote(req.body, notes);
     res.json(newNote);
 });
-//functions to create notes
+//function to create notes
 function createNote(body, notesArr) {
     const newNote = body;
     if (!Array.isArray(notesArr))
