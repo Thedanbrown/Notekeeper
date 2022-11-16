@@ -33,7 +33,7 @@ app.post('/api/notes', (req, res) => {
 //setting our delete route
 app.delete('/api/notes/:id', (req, res) => {
     deleteNote(req.params.id, notes);
-    // res.json(true);
+    res.json(true);
 });
 
 //function to create notes
