@@ -30,6 +30,12 @@ app.post('/api/notes', (req, res) => {
     const newNote = createNote(req.body, notes);
     res.json(newNote);
 });
+//adds the delete route
+app.delete('/api/notes/:id', (req, res) => {
+    deleteNote(req.params.id, notes);
+    res.json(true);
+});
+
 //function to create notes
 function createNote(body, notesArr) {
     const newNote = body;
@@ -61,10 +67,7 @@ function deleteNote(id, notesArr) {
         }
     }
 }
-app.delete('/api/notes/:id', (req, res) => {
-    deleteNote(req.params.id, notes);
-    res.json(true);
-});
+
 
 app.listen(PORT, () => {
     console.log(`Express server listening on port ${PORT}`);
