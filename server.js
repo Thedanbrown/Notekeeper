@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-const PORT = 3001;
+const PORT = 8080;
 //enabling express
 const app = express();
 //setting our note json file as a variable
