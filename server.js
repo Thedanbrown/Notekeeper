@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const PORT = 3001;
-//enabling express as a variable
+//enabling express
 const app = express();
 //setting our note json file as a variable
 const notes = require('./db/db.json');
@@ -25,7 +25,7 @@ app.get('/notes', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
-
+// setting our post route
 app.post('/api/notes', (req, res) => {
     const newNote = createNote(req.body, notes);
     res.json(newNote);
@@ -52,7 +52,7 @@ function createNote(body, notesArr) {
 function deleteNote(id, notesArr) {
     for (let i = 0; i < notesArr.length; i++) {
         let note = notesArr[i];
-        if (note.id == id) {
+        if (note.id === id) {
             notesArr.splice(i, 1);
             fs.writeFileSync(
                 path.join(__dirname, './db/db.json'),
