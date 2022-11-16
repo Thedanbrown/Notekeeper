@@ -30,10 +30,10 @@ app.post('/api/notes', (req, res) => {
     const newNote = createNote(req.body, notes);
     res.json(newNote);
 });
-//adds the delete route
+//setting our delete route
 app.delete('/api/notes/:id', (req, res) => {
     deleteNote(req.params.id, notes);
-    res.json(true);
+    // res.json(true);
 });
 
 //function to create notes
