@@ -52,7 +52,7 @@ function createNote(body, notesArr) {
 function deleteNote(id, notesArr) {
     for (let i = 0; i < notesArr.length; i++) {
         let note = notesArr[i];
-        if (note.id === id) {
+        if (note.id == id) {
             notesArr.splice(i, 1);
             fs.writeFileSync(
                 path.join(__dirname, './db/db.json'),
